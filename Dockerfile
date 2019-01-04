@@ -7,6 +7,7 @@ RUN apt-get update -y && \
         python3 \
         python3-pip
 
-WORKDIR /app/tor-privoxy
-COPY ./setup-tor.sh /app/tor-privoxy/setup-tor.sh
-ENTRYPOINT [ "tor" ]
+WORKDIR /home/tor-privoxy
+COPY ./setup-tor.sh /home/tor-privoxy/setup-tor.sh
+# RUN ["chmod" "+x", "setup-tor.sh","&&","bash", "./setup-tor.sh"]
+ENTRYPOINT [ "bash" ]
