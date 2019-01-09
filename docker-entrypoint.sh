@@ -4,6 +4,6 @@ set -e
 echo "Starting Tor..."
 service tor start
 echo "Starting Privoxy..."
-service privoxy start
+privoxy --no-daemon /etc/privoxy/config
 
 exec "$@";
